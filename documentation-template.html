@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 9 Documentation Template | FIMS Developer Handbook</title>
+  <meta name="description" content="This is a handbook for FIMS developers and contributors." />
+  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 9 Documentation Template | FIMS Developer Handbook" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is a handbook for FIMS developers and contributors." />
+  <meta name="github-repo" content="noaa-fims/collaborative_workflow" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 9 Documentation Template | FIMS Developer Handbook" />
+  
+  <meta name="twitter:description" content="This is a handbook for FIMS developers and contributors." />
+  
+
+<meta name="author" content="FIMS Implementation Team" />
+
+
+<meta name="date" content="2025-03-12" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon" />
+<link rel="prev" href="hpp-template-for-c-modules.html"/>
+<link rel="next" href="testing.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="libs/d3-3.3.8/d3.min.js"></script>
+<script src="libs/dagre-0.4.0/dagre-d3.min.js"></script>
+<link href="libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet" />
+<script src="libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/chromatography-0.1/chromatography.js"></script>
+<script src="libs/DiagrammeR-binding-1.0.11/DiagrammeR.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="extra.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">FIMS Developer Guide</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Contributing to this book</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#description"><i class="fa fa-check"></i><b>1.1</b> Description</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#edit-and-preview-book-changes"><i class="fa fa-check"></i><b>1.2</b> Edit and preview book changes</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="code-of-conduct.html"><a href="code-of-conduct.html"><i class="fa fa-check"></i><b>2</b> Code of conduct</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="code-of-conduct.html"><a href="code-of-conduct.html#fims-contributor-conduct"><i class="fa fa-check"></i><b>2.1</b> FIMS contributor conduct</a></li>
+<li class="chapter" data-level="2.2" data-path="code-of-conduct.html"><a href="code-of-conduct.html#our-pledge"><i class="fa fa-check"></i><b>2.2</b> Our pledge</a></li>
+<li class="chapter" data-level="2.3" data-path="code-of-conduct.html"><a href="code-of-conduct.html#our-standards"><i class="fa fa-check"></i><b>2.3</b> Our standards</a></li>
+<li class="chapter" data-level="2.4" data-path="code-of-conduct.html"><a href="code-of-conduct.html#enforcement-responsibilities"><i class="fa fa-check"></i><b>2.4</b> Enforcement responsibilities</a></li>
+<li class="chapter" data-level="2.5" data-path="code-of-conduct.html"><a href="code-of-conduct.html#scope"><i class="fa fa-check"></i><b>2.5</b> Scope</a></li>
+<li class="chapter" data-level="2.6" data-path="code-of-conduct.html"><a href="code-of-conduct.html#enforcement"><i class="fa fa-check"></i><b>2.6</b> Enforcement</a></li>
+<li class="chapter" data-level="2.7" data-path="code-of-conduct.html"><a href="code-of-conduct.html#enforcement-guidelines"><i class="fa fa-check"></i><b>2.7</b> Enforcement guidelines</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="code-of-conduct.html"><a href="code-of-conduct.html#correction"><i class="fa fa-check"></i><b>2.7.1</b> 1. Correction</a></li>
+<li class="chapter" data-level="2.7.2" data-path="code-of-conduct.html"><a href="code-of-conduct.html#warning"><i class="fa fa-check"></i><b>2.7.2</b> 2. Warning</a></li>
+<li class="chapter" data-level="2.7.3" data-path="code-of-conduct.html"><a href="code-of-conduct.html#temporary-ban"><i class="fa fa-check"></i><b>2.7.3</b> 3. Temporary ban</a></li>
+<li class="chapter" data-level="2.7.4" data-path="code-of-conduct.html"><a href="code-of-conduct.html#permanent-ban"><i class="fa fa-check"></i><b>2.7.4</b> 4. Permanent ban</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="code-of-conduct.html"><a href="code-of-conduct.html#supporting-good-conduct"><i class="fa fa-check"></i><b>2.8</b> Supporting good conduct</a></li>
+<li class="chapter" data-level="2.9" data-path="code-of-conduct.html"><a href="code-of-conduct.html#attribution"><i class="fa fa-check"></i><b>2.9</b> Attribution</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="fims-project-management-process.html"><a href="fims-project-management-process.html"><i class="fa fa-check"></i><b>3</b> FIMS project management process</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="fims-project-management-process.html"><a href="fims-project-management-process.html#fims-governance"><i class="fa fa-check"></i><b>3.1</b> FIMS governance</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="fims-project-management-process.html"><a href="fims-project-management-process.html#developers"><i class="fa fa-check"></i><b>3.1.1</b> Developers</a></li>
+<li class="chapter" data-level="3.1.2" data-path="fims-project-management-process.html"><a href="fims-project-management-process.html#c-developers"><i class="fa fa-check"></i><b>3.1.2</b> C++ developers</a></li>
+<li class="chapter" data-level="3.1.3" data-path="fims-project-management-process.html"><a href="fims-project-management-process.html#r-developers"><i class="fa fa-check"></i><b>3.1.3</b> R developers</a></li>
+<li class="chapter" data-level="3.1.4" data-path="fims-project-management-process.html"><a href="fims-project-management-process.html#all-developers"><i class="fa fa-check"></i><b>3.1.4</b> All developers</a></li>
+<li class="chapter" data-level="3.1.5" data-path="fims-project-management-process.html"><a href="fims-project-management-process.html#project-lead"><i class="fa fa-check"></i><b>3.1.5</b> Project Lead</a></li>
+<li class="chapter" data-level="3.1.6" data-path="fims-project-management-process.html"><a href="fims-project-management-process.html#lead-software-architect"><i class="fa fa-check"></i><b>3.1.6</b> Lead Software Architect</a></li>
+<li class="chapter" data-level="3.1.7" data-path="fims-project-management-process.html"><a href="fims-project-management-process.html#lead-test-engineer"><i class="fa fa-check"></i><b>3.1.7</b> Lead Test Engineer</a></li>
+<li class="chapter" data-level="3.1.8" data-path="fims-project-management-process.html"><a href="fims-project-management-process.html#lead-statistical-computing-engineer"><i class="fa fa-check"></i><b>3.1.8</b> Lead Statistical Computing Engineer</a></li>
+<li class="chapter" data-level="3.1.9" data-path="fims-project-management-process.html"><a href="fims-project-management-process.html#outreach-and-transition-coordinator"><i class="fa fa-check"></i><b>3.1.9</b> Outreach and Transition Coordinator</a></li>
+<li class="chapter" data-level="3.1.10" data-path="fims-project-management-process.html"><a href="fims-project-management-process.html#lead-of-workflows-accessibility-and-integration"><i class="fa fa-check"></i><b>3.1.10</b> Lead of Workflows, Accessibility, and Integration</a></li>
+<li class="chapter" data-level="3.1.11" data-path="fims-project-management-process.html"><a href="fims-project-management-process.html#regional-representatives"><i class="fa fa-check"></i><b>3.1.11</b> Regional representatives</a></li>
+<li class="chapter" data-level="3.1.12" data-path="fims-project-management-process.html"><a href="fims-project-management-process.html#code-of-conduct-enforcement"><i class="fa fa-check"></i><b>3.1.12</b> Code of conduct enforcement</a></li>
+<li class="chapter" data-level="3.1.13" data-path="fims-project-management-process.html"><a href="fims-project-management-process.html#external-collaborators"><i class="fa fa-check"></i><b>3.1.13</b> External collaborators</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="fims-project-management-process.html"><a href="fims-project-management-process.html#fims-development-cycle"><i class="fa fa-check"></i><b>3.2</b> FIMS development cycle</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="fims-project-management-process.html"><a href="fims-project-management-process.html#issue-lifecycle"><i class="fa fa-check"></i><b>3.2.1</b> Issue lifecycle</a></li>
+<li class="chapter" data-level="3.2.2" data-path="fims-project-management-process.html"><a href="fims-project-management-process.html#m2-development-workflow"><i class="fa fa-check"></i><b>3.2.2</b> M2 development workflow</a></li>
+<li class="chapter" data-level="3.2.3" data-path="fims-project-management-process.html"><a href="fims-project-management-process.html#feature-validation"><i class="fa fa-check"></i><b>3.2.3</b> Feature validation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="m1-model-specification.html"><a href="m1-model-specification.html"><i class="fa fa-check"></i><b>4</b> M1 model specification</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="m1-model-specification.html"><a href="m1-model-specification.html#inherited-functors-from-tmb"><i class="fa fa-check"></i><b>4.1</b> Inherited functors from <code>TMB</code></a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="m1-model-specification.html"><a href="m1-model-specification.html#atomic-functions"><i class="fa fa-check"></i><b>4.1.1</b> Atomic functions</a></li>
+<li class="chapter" data-level="4.1.2" data-path="m1-model-specification.html"><a href="m1-model-specification.html#statistical-distributions"><i class="fa fa-check"></i><b>4.1.2</b> Statistical distributions</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="m1-model-specification.html"><a href="m1-model-specification.html#beverton-holt-recruitment-function"><i class="fa fa-check"></i><b>4.2</b> Beverton-Holt recruitment function</a></li>
+<li class="chapter" data-level="4.3" data-path="m1-model-specification.html"><a href="m1-model-specification.html#logistic-function-with-extensions"><i class="fa fa-check"></i><b>4.3</b> Logistic function with extensions</a></li>
+<li class="chapter" data-level="4.4" data-path="m1-model-specification.html"><a href="m1-model-specification.html#catch-and-fishing-mortality"><i class="fa fa-check"></i><b>4.4</b> Catch and fishing mortality</a></li>
+<li class="chapter" data-level="4.5" data-path="m1-model-specification.html"><a href="m1-model-specification.html#modeling-loops"><i class="fa fa-check"></i><b>4.5</b> Modeling loops</a></li>
+<li class="chapter" data-level="4.6" data-path="m1-model-specification.html"><a href="m1-model-specification.html#expected-numbers-and-quantities"><i class="fa fa-check"></i><b>4.6</b> Expected numbers and quantities</a></li>
+<li class="chapter" data-level="4.7" data-path="m1-model-specification.html"><a href="m1-model-specification.html#initial-values"><i class="fa fa-check"></i><b>4.7</b> Initial values</a></li>
+<li class="chapter" data-level="4.8" data-path="m1-model-specification.html"><a href="m1-model-specification.html#likelihood-calculations"><i class="fa fa-check"></i><b>4.8</b> Likelihood calculations</a></li>
+<li class="chapter" data-level="4.9" data-path="m1-model-specification.html"><a href="m1-model-specification.html#statistical-inference"><i class="fa fa-check"></i><b>4.9</b> Statistical Inference:</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="user-guide.html"><a href="user-guide.html"><i class="fa fa-check"></i><b>5</b> User guide</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="user-guide.html"><a href="user-guide.html#installing-the-package-from-r-universe"><i class="fa fa-check"></i><b>5.1</b> Installing the package from R universe</a></li>
+<li class="chapter" data-level="5.2" data-path="user-guide.html"><a href="user-guide.html#running-fims"><i class="fa fa-check"></i><b>5.2</b> Running FIMS</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="developer-software-and-installation-guide.html"><a href="developer-software-and-installation-guide.html"><i class="fa fa-check"></i><b>6</b> Developer Software and Installation Guide</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="developer-software-and-installation-guide.html"><a href="developer-software-and-installation-guide.html#codespaces-as-an-alternative-to-installing-software"><i class="fa fa-check"></i><b>6.1</b> Codespaces as an alternative to installing software</a></li>
+<li class="chapter" data-level="6.2" data-path="developer-software-and-installation-guide.html"><a href="developer-software-and-installation-guide.html#software-to-install"><i class="fa fa-check"></i><b>6.2</b> Software to install</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="developer-software-and-installation-guide.html"><a href="developer-software-and-installation-guide.html#git"><i class="fa fa-check"></i><b>6.2.1</b> git</a></li>
+<li class="chapter" data-level="6.2.2" data-path="developer-software-and-installation-guide.html"><a href="developer-software-and-installation-guide.html#development-environment"><i class="fa fa-check"></i><b>6.2.2</b> Development environment</a></li>
+<li class="chapter" data-level="6.2.3" data-path="developer-software-and-installation-guide.html"><a href="developer-software-and-installation-guide.html#c-compiler"><i class="fa fa-check"></i><b>6.2.3</b> C++ compiler</a></li>
+<li class="chapter" data-level="6.2.4" data-path="developer-software-and-installation-guide.html"><a href="developer-software-and-installation-guide.html#googletest"><i class="fa fa-check"></i><b>6.2.4</b> GoogleTest</a></li>
+<li class="chapter" data-level="6.2.5" data-path="developer-software-and-installation-guide.html"><a href="developer-software-and-installation-guide.html#gdb-debugger"><i class="fa fa-check"></i><b>6.2.5</b> GDB debugger</a></li>
+<li class="chapter" data-level="6.2.6" data-path="developer-software-and-installation-guide.html"><a href="developer-software-and-installation-guide.html#doxygen"><i class="fa fa-check"></i><b>6.2.6</b> Doxygen</a></li>
+<li class="chapter" data-level="6.2.7" data-path="developer-software-and-installation-guide.html"><a href="developer-software-and-installation-guide.html#r"><i class="fa fa-check"></i><b>6.2.7</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="developer-software-and-installation-guide.html"><a href="developer-software-and-installation-guide.html#installing-fims"><i class="fa fa-check"></i><b>6.3</b> Installing FIMS</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="developer-software-and-installation-guide.html"><a href="developer-software-and-installation-guide.html#clone-and-build"><i class="fa fa-check"></i><b>6.3.1</b> Clone and build</a></li>
+<li class="chapter" data-level="6.3.2" data-path="developer-software-and-installation-guide.html"><a href="developer-software-and-installation-guide.html#precompiled"><i class="fa fa-check"></i><b>6.3.2</b> Precompiled</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="developer-software-and-installation-guide.html"><a href="developer-software-and-installation-guide.html#getting-help"><i class="fa fa-check"></i><b>6.4</b> Getting Help</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="contributor-guidelines.html"><a href="contributor-guidelines.html"><i class="fa fa-check"></i><b>7</b> Contributor Guidelines</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="contributor-guidelines.html"><a href="contributor-guidelines.html#code"><i class="fa fa-check"></i><b>7.1</b> Code</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="contributor-guidelines.html"><a href="contributor-guidelines.html#style-guide"><i class="fa fa-check"></i><b>7.1.1</b> Style Guide</a></li>
+<li class="chapter" data-level="7.1.2" data-path="contributor-guidelines.html"><a href="contributor-guidelines.html#coding-good-practices"><i class="fa fa-check"></i><b>7.1.2</b> Coding Good Practices</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="contributor-guidelines.html"><a href="contributor-guidelines.html#github-collaborative-environment"><i class="fa fa-check"></i><b>7.2</b> GitHub Collaborative Environment</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="contributor-guidelines.html"><a href="contributor-guidelines.html#github-issues"><i class="fa fa-check"></i><b>7.2.1</b> GitHub Issues</a></li>
+<li class="chapter" data-level="7.2.2" data-path="contributor-guidelines.html"><a href="contributor-guidelines.html#github-cloning"><i class="fa fa-check"></i><b>7.2.2</b> GitHub Cloning</a></li>
+<li class="chapter" data-level="7.2.3" data-path="contributor-guidelines.html"><a href="contributor-guidelines.html#github-branching"><i class="fa fa-check"></i><b>7.2.3</b> GitHub Branching</a></li>
+<li class="chapter" data-level="7.2.4" data-path="contributor-guidelines.html"><a href="contributor-guidelines.html#github-pull-requests"><i class="fa fa-check"></i><b>7.2.4</b> GitHub Pull Requests</a></li>
+<li class="chapter" data-level="7.2.5" data-path="contributor-guidelines.html"><a href="contributor-guidelines.html#github-actions"><i class="fa fa-check"></i><b>7.2.5</b> GitHub Actions</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="contributor-guidelines.html"><a href="contributor-guidelines.html#git-1"><i class="fa fa-check"></i><b>7.3</b> git</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="contributor-guidelines.html"><a href="contributor-guidelines.html#git-example"><i class="fa fa-check"></i><b>7.3.1</b> git Example</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="hpp-template-for-c-modules.html"><a href="hpp-template-for-c-modules.html"><i class="fa fa-check"></i><b>8</b> .hpp template for C++ modules</a></li>
+<li class="chapter" data-level="9" data-path="documentation-template.html"><a href="documentation-template.html"><i class="fa fa-check"></i><b>9</b> Documentation Template</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="documentation-template.html"><a href="documentation-template.html#writing-function-reference"><i class="fa fa-check"></i><b>9.1</b> Writing function reference</a></li>
+<li class="chapter" data-level="9.2" data-path="documentation-template.html"><a href="documentation-template.html#writing-a-vignette"><i class="fa fa-check"></i><b>9.2</b> Writing a vignette</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="testing.html"><a href="testing.html"><i class="fa fa-check"></i><b>10</b> Testing</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="testing.html"><a href="testing.html#introduction"><i class="fa fa-check"></i><b>10.1</b> Introduction</a></li>
+<li class="chapter" data-level="10.2" data-path="testing.html"><a href="testing.html#c-unit-testing-and-benchmarking"><i class="fa fa-check"></i><b>10.2</b> C++ unit testing and benchmarking</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="testing.html"><a href="testing.html#build-and-run-the-tests"><i class="fa fa-check"></i><b>10.2.1</b> Build and run the tests</a></li>
+<li class="chapter" data-level="10.2.2" data-path="testing.html"><a href="testing.html#adding-a-c-test"><i class="fa fa-check"></i><b>10.2.2</b> Adding a C++ test</a></li>
+<li class="chapter" data-level="10.2.3" data-path="testing.html"><a href="testing.html#debugging-a-c-test"><i class="fa fa-check"></i><b>10.2.3</b> Debugging a C++ test</a></li>
+<li class="chapter" data-level="10.2.4" data-path="testing.html"><a href="testing.html#benchmark-example"><i class="fa fa-check"></i><b>10.2.4</b> Benchmark example</a></li>
+<li class="chapter" data-level="10.2.5" data-path="testing.html"><a href="testing.html#clean-up-after-running-c-tests"><i class="fa fa-check"></i><b>10.2.5</b> Clean up after running C++ tests</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="testing.html"><a href="testing.html#templates-for-googletest-testing"><i class="fa fa-check"></i><b>10.3</b> Templates for GoogleTest testing</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="testing.html"><a href="testing.html#c-test-templates"><i class="fa fa-check"></i><b>10.3.1</b> C++ test templates</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="testing.html"><a href="testing.html#r-testing"><i class="fa fa-check"></i><b>10.4</b> R testing</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="testing.html"><a href="testing.html#testing-fims-locally"><i class="fa fa-check"></i><b>10.4.1</b> Testing FIMS locally</a></li>
+<li class="chapter" data-level="10.4.2" data-path="testing.html"><a href="testing.html#testing-using-gdbsource"><i class="fa fa-check"></i><b>10.4.2</b> Testing using <code>gdbsource</code></a></li>
+<li class="chapter" data-level="10.4.3" data-path="testing.html"><a href="testing.html#and-file-organization"><i class="fa fa-check"></i><b>10.4.3</b> and file organization</a></li>
+<li class="chapter" data-level="10.4.4" data-path="testing.html"><a href="testing.html#r-template"><i class="fa fa-check"></i><b>10.4.4</b> R template</a></li>
+<li class="chapter" data-level="10.4.5" data-path="testing.html"><a href="testing.html#random-numbers"><i class="fa fa-check"></i><b>10.4.5</b> Random numbers</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://noaa-fims.github.io/collaborative_workflow" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">FIMS Developer Handbook</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="documentation-template" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">Chapter 9</span> Documentation Template<a href="documentation-template.html#documentation-template" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Below, are specific, brief instructions on developer responsibilities for FIMS regarding documentation. For more information about code documentation in general, please see the <a href="https://noaa-fisheries-integrated-toolbox.github.io/resources/developer%20resources/code-documentation/">toolbox blog post on code documentation</a>.</p>
+<div id="writing-function-reference" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">9.1</span> Writing function reference<a href="documentation-template.html#writing-function-reference" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Function reference can be written inline in comments above the function in either C++ or R. Doxygen and Roxygen in C++ and R, respectively, are used to render the documentation. Both can include LaTeX syntax to denote equations and both use <code>@</code> tags to name components of the function reference. Below is an example from C++ code.</p>
+<pre><code>        /**
+        * @brief This function calculates the von Bertalanffy growth curve.
+         * \f$
+         *
+         * length\_at\_age = lmin + (lmax - lmin)*\frac{(1.0 -
+                    c^ {(age - a\_min)}))}{(1.0  - c^{(a\_max - a\_min)})}
+         *
+         * \f$
+         *
+         * @param age
+         * @param sex
+         * @return length\_at\_age
+         */</code></pre>
+<p>which can be be rendered using via the following lines in the Command Prompt:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="documentation-template.html#cb14-1" tabindex="-1"></a><span class="fu">cmake</span> <span class="at">-S.</span> <span class="at">-B</span> build <span class="at">-G</span> Ninja</span>
+<span id="cb14-2"><a href="documentation-template.html#cb14-2" tabindex="-1"></a><span class="fu">cmake</span> <span class="at">--build</span> build</span></code></pre></div>
+<p>The only difference between the syntax for <code>R</code> and <code>C++</code> code is how comments are denoted in the language. Below is an example from R code.</p>
+<pre><code>#&#39; This function calculates the von Bertalanffy growth curve.
+#&#39;
+#&#39; @param age
+#&#39; @param sex
+#&#39; @return length_at_age</code></pre>
+<p>which can be rendered in R with <code>devtools::document()</code>.</p>
+<p>You should, at minimum, include the tags <code>@param</code>, <code>@return</code>, and <code>@examples</code> in your documentation for all exported functions. Functions that are only called internally do not require an <code>@examples</code> tag. See the <a href="https://roxygen2.r-lib.org/">r-lib</a> for all available tags and best practices.</p>
+</div>
+<div id="writing-a-vignette" class="section level2 hasAnchor" number="9.2">
+<h2><span class="header-section-number">9.2</span> Writing a vignette<a href="documentation-template.html#writing-a-vignette" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Vignettes can be a helpful tool to let users to know how to use functions. If you include a vignette for your function, you can link to it in the Roxygen documentation with the following code.</p>
+<pre><code>#&#39; \code{vignette(&quot;help&quot;, package = &quot;mypkg&quot;)}</code></pre>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="hpp-template-for-c-modules.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="testing.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": null,
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/noaa-fims/collaborative_workflow/edit/main/09-documentation-templates.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": "https://github.com/noaa-fims/collaborative_workflow/blob/main/09-documentation-templates.Rmd",
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

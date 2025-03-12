@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 7 Contributor Guidelines | FIMS Developer Handbook</title>
+  <meta name="description" content="This is a handbook for FIMS developers and contributors." />
+  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 7 Contributor Guidelines | FIMS Developer Handbook" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is a handbook for FIMS developers and contributors." />
+  <meta name="github-repo" content="noaa-fims/collaborative_workflow" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 7 Contributor Guidelines | FIMS Developer Handbook" />
+  
+  <meta name="twitter:description" content="This is a handbook for FIMS developers and contributors." />
+  
+
+<meta name="author" content="FIMS Implementation Team" />
+
+
+<meta name="date" content="2025-03-12" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon" />
+<link rel="prev" href="developer-software-and-installation-guide.html"/>
+<link rel="next" href="hpp-template-for-c-modules.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="libs/d3-3.3.8/d3.min.js"></script>
+<script src="libs/dagre-0.4.0/dagre-d3.min.js"></script>
+<link href="libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet" />
+<script src="libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/chromatography-0.1/chromatography.js"></script>
+<script src="libs/DiagrammeR-binding-1.0.11/DiagrammeR.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="extra.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">FIMS Developer Guide</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Contributing to this book</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#description"><i class="fa fa-check"></i><b>1.1</b> Description</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#edit-and-preview-book-changes"><i class="fa fa-check"></i><b>1.2</b> Edit and preview book changes</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="code-of-conduct.html"><a href="code-of-conduct.html"><i class="fa fa-check"></i><b>2</b> Code of conduct</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="code-of-conduct.html"><a href="code-of-conduct.html#fims-contributor-conduct"><i class="fa fa-check"></i><b>2.1</b> FIMS contributor conduct</a></li>
+<li class="chapter" data-level="2.2" data-path="code-of-conduct.html"><a href="code-of-conduct.html#our-pledge"><i class="fa fa-check"></i><b>2.2</b> Our pledge</a></li>
+<li class="chapter" data-level="2.3" data-path="code-of-conduct.html"><a href="code-of-conduct.html#our-standards"><i class="fa fa-check"></i><b>2.3</b> Our standards</a></li>
+<li class="chapter" data-level="2.4" data-path="code-of-conduct.html"><a href="code-of-conduct.html#enforcement-responsibilities"><i class="fa fa-check"></i><b>2.4</b> Enforcement responsibilities</a></li>
+<li class="chapter" data-level="2.5" data-path="code-of-conduct.html"><a href="code-of-conduct.html#scope"><i class="fa fa-check"></i><b>2.5</b> Scope</a></li>
+<li class="chapter" data-level="2.6" data-path="code-of-conduct.html"><a href="code-of-conduct.html#enforcement"><i class="fa fa-check"></i><b>2.6</b> Enforcement</a></li>
+<li class="chapter" data-level="2.7" data-path="code-of-conduct.html"><a href="code-of-conduct.html#enforcement-guidelines"><i class="fa fa-check"></i><b>2.7</b> Enforcement guidelines</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="code-of-conduct.html"><a href="code-of-conduct.html#correction"><i class="fa fa-check"></i><b>2.7.1</b> 1. Correction</a></li>
+<li class="chapter" data-level="2.7.2" data-path="code-of-conduct.html"><a href="code-of-conduct.html#warning"><i class="fa fa-check"></i><b>2.7.2</b> 2. Warning</a></li>
+<li class="chapter" data-level="2.7.3" data-path="code-of-conduct.html"><a href="code-of-conduct.html#temporary-ban"><i class="fa fa-check"></i><b>2.7.3</b> 3. Temporary ban</a></li>
+<li class="chapter" data-level="2.7.4" data-path="code-of-conduct.html"><a href="code-of-conduct.html#permanent-ban"><i class="fa fa-check"></i><b>2.7.4</b> 4. Permanent ban</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="code-of-conduct.html"><a href="code-of-conduct.html#supporting-good-conduct"><i class="fa fa-check"></i><b>2.8</b> Supporting good conduct</a></li>
+<li class="chapter" data-level="2.9" data-path="code-of-conduct.html"><a href="code-of-conduct.html#attribution"><i class="fa fa-check"></i><b>2.9</b> Attribution</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="fims-project-management-process.html"><a href="fims-project-management-process.html"><i class="fa fa-check"></i><b>3</b> FIMS project management process</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="fims-project-management-process.html"><a href="fims-project-management-process.html#fims-governance"><i class="fa fa-check"></i><b>3.1</b> FIMS governance</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="fims-project-management-process.html"><a href="fims-project-management-process.html#developers"><i class="fa fa-check"></i><b>3.1.1</b> Developers</a></li>
+<li class="chapter" data-level="3.1.2" data-path="fims-project-management-process.html"><a href="fims-project-management-process.html#c-developers"><i class="fa fa-check"></i><b>3.1.2</b> C++ developers</a></li>
+<li class="chapter" data-level="3.1.3" data-path="fims-project-management-process.html"><a href="fims-project-management-process.html#r-developers"><i class="fa fa-check"></i><b>3.1.3</b> R developers</a></li>
+<li class="chapter" data-level="3.1.4" data-path="fims-project-management-process.html"><a href="fims-project-management-process.html#all-developers"><i class="fa fa-check"></i><b>3.1.4</b> All developers</a></li>
+<li class="chapter" data-level="3.1.5" data-path="fims-project-management-process.html"><a href="fims-project-management-process.html#project-lead"><i class="fa fa-check"></i><b>3.1.5</b> Project Lead</a></li>
+<li class="chapter" data-level="3.1.6" data-path="fims-project-management-process.html"><a href="fims-project-management-process.html#lead-software-architect"><i class="fa fa-check"></i><b>3.1.6</b> Lead Software Architect</a></li>
+<li class="chapter" data-level="3.1.7" data-path="fims-project-management-process.html"><a href="fims-project-management-process.html#lead-test-engineer"><i class="fa fa-check"></i><b>3.1.7</b> Lead Test Engineer</a></li>
+<li class="chapter" data-level="3.1.8" data-path="fims-project-management-process.html"><a href="fims-project-management-process.html#lead-statistical-computing-engineer"><i class="fa fa-check"></i><b>3.1.8</b> Lead Statistical Computing Engineer</a></li>
+<li class="chapter" data-level="3.1.9" data-path="fims-project-management-process.html"><a href="fims-project-management-process.html#outreach-and-transition-coordinator"><i class="fa fa-check"></i><b>3.1.9</b> Outreach and Transition Coordinator</a></li>
+<li class="chapter" data-level="3.1.10" data-path="fims-project-management-process.html"><a href="fims-project-management-process.html#lead-of-workflows-accessibility-and-integration"><i class="fa fa-check"></i><b>3.1.10</b> Lead of Workflows, Accessibility, and Integration</a></li>
+<li class="chapter" data-level="3.1.11" data-path="fims-project-management-process.html"><a href="fims-project-management-process.html#regional-representatives"><i class="fa fa-check"></i><b>3.1.11</b> Regional representatives</a></li>
+<li class="chapter" data-level="3.1.12" data-path="fims-project-management-process.html"><a href="fims-project-management-process.html#code-of-conduct-enforcement"><i class="fa fa-check"></i><b>3.1.12</b> Code of conduct enforcement</a></li>
+<li class="chapter" data-level="3.1.13" data-path="fims-project-management-process.html"><a href="fims-project-management-process.html#external-collaborators"><i class="fa fa-check"></i><b>3.1.13</b> External collaborators</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="fims-project-management-process.html"><a href="fims-project-management-process.html#fims-development-cycle"><i class="fa fa-check"></i><b>3.2</b> FIMS development cycle</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="fims-project-management-process.html"><a href="fims-project-management-process.html#issue-lifecycle"><i class="fa fa-check"></i><b>3.2.1</b> Issue lifecycle</a></li>
+<li class="chapter" data-level="3.2.2" data-path="fims-project-management-process.html"><a href="fims-project-management-process.html#m2-development-workflow"><i class="fa fa-check"></i><b>3.2.2</b> M2 development workflow</a></li>
+<li class="chapter" data-level="3.2.3" data-path="fims-project-management-process.html"><a href="fims-project-management-process.html#feature-validation"><i class="fa fa-check"></i><b>3.2.3</b> Feature validation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="m1-model-specification.html"><a href="m1-model-specification.html"><i class="fa fa-check"></i><b>4</b> M1 model specification</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="m1-model-specification.html"><a href="m1-model-specification.html#inherited-functors-from-tmb"><i class="fa fa-check"></i><b>4.1</b> Inherited functors from <code>TMB</code></a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="m1-model-specification.html"><a href="m1-model-specification.html#atomic-functions"><i class="fa fa-check"></i><b>4.1.1</b> Atomic functions</a></li>
+<li class="chapter" data-level="4.1.2" data-path="m1-model-specification.html"><a href="m1-model-specification.html#statistical-distributions"><i class="fa fa-check"></i><b>4.1.2</b> Statistical distributions</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="m1-model-specification.html"><a href="m1-model-specification.html#beverton-holt-recruitment-function"><i class="fa fa-check"></i><b>4.2</b> Beverton-Holt recruitment function</a></li>
+<li class="chapter" data-level="4.3" data-path="m1-model-specification.html"><a href="m1-model-specification.html#logistic-function-with-extensions"><i class="fa fa-check"></i><b>4.3</b> Logistic function with extensions</a></li>
+<li class="chapter" data-level="4.4" data-path="m1-model-specification.html"><a href="m1-model-specification.html#catch-and-fishing-mortality"><i class="fa fa-check"></i><b>4.4</b> Catch and fishing mortality</a></li>
+<li class="chapter" data-level="4.5" data-path="m1-model-specification.html"><a href="m1-model-specification.html#modeling-loops"><i class="fa fa-check"></i><b>4.5</b> Modeling loops</a></li>
+<li class="chapter" data-level="4.6" data-path="m1-model-specification.html"><a href="m1-model-specification.html#expected-numbers-and-quantities"><i class="fa fa-check"></i><b>4.6</b> Expected numbers and quantities</a></li>
+<li class="chapter" data-level="4.7" data-path="m1-model-specification.html"><a href="m1-model-specification.html#initial-values"><i class="fa fa-check"></i><b>4.7</b> Initial values</a></li>
+<li class="chapter" data-level="4.8" data-path="m1-model-specification.html"><a href="m1-model-specification.html#likelihood-calculations"><i class="fa fa-check"></i><b>4.8</b> Likelihood calculations</a></li>
+<li class="chapter" data-level="4.9" data-path="m1-model-specification.html"><a href="m1-model-specification.html#statistical-inference"><i class="fa fa-check"></i><b>4.9</b> Statistical Inference:</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="user-guide.html"><a href="user-guide.html"><i class="fa fa-check"></i><b>5</b> User guide</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="user-guide.html"><a href="user-guide.html#installing-the-package-from-r-universe"><i class="fa fa-check"></i><b>5.1</b> Installing the package from R universe</a></li>
+<li class="chapter" data-level="5.2" data-path="user-guide.html"><a href="user-guide.html#running-fims"><i class="fa fa-check"></i><b>5.2</b> Running FIMS</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="developer-software-and-installation-guide.html"><a href="developer-software-and-installation-guide.html"><i class="fa fa-check"></i><b>6</b> Developer Software and Installation Guide</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="developer-software-and-installation-guide.html"><a href="developer-software-and-installation-guide.html#codespaces-as-an-alternative-to-installing-software"><i class="fa fa-check"></i><b>6.1</b> Codespaces as an alternative to installing software</a></li>
+<li class="chapter" data-level="6.2" data-path="developer-software-and-installation-guide.html"><a href="developer-software-and-installation-guide.html#software-to-install"><i class="fa fa-check"></i><b>6.2</b> Software to install</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="developer-software-and-installation-guide.html"><a href="developer-software-and-installation-guide.html#git"><i class="fa fa-check"></i><b>6.2.1</b> git</a></li>
+<li class="chapter" data-level="6.2.2" data-path="developer-software-and-installation-guide.html"><a href="developer-software-and-installation-guide.html#development-environment"><i class="fa fa-check"></i><b>6.2.2</b> Development environment</a></li>
+<li class="chapter" data-level="6.2.3" data-path="developer-software-and-installation-guide.html"><a href="developer-software-and-installation-guide.html#c-compiler"><i class="fa fa-check"></i><b>6.2.3</b> C++ compiler</a></li>
+<li class="chapter" data-level="6.2.4" data-path="developer-software-and-installation-guide.html"><a href="developer-software-and-installation-guide.html#googletest"><i class="fa fa-check"></i><b>6.2.4</b> GoogleTest</a></li>
+<li class="chapter" data-level="6.2.5" data-path="developer-software-and-installation-guide.html"><a href="developer-software-and-installation-guide.html#gdb-debugger"><i class="fa fa-check"></i><b>6.2.5</b> GDB debugger</a></li>
+<li class="chapter" data-level="6.2.6" data-path="developer-software-and-installation-guide.html"><a href="developer-software-and-installation-guide.html#doxygen"><i class="fa fa-check"></i><b>6.2.6</b> Doxygen</a></li>
+<li class="chapter" data-level="6.2.7" data-path="developer-software-and-installation-guide.html"><a href="developer-software-and-installation-guide.html#r"><i class="fa fa-check"></i><b>6.2.7</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="developer-software-and-installation-guide.html"><a href="developer-software-and-installation-guide.html#installing-fims"><i class="fa fa-check"></i><b>6.3</b> Installing FIMS</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="developer-software-and-installation-guide.html"><a href="developer-software-and-installation-guide.html#clone-and-build"><i class="fa fa-check"></i><b>6.3.1</b> Clone and build</a></li>
+<li class="chapter" data-level="6.3.2" data-path="developer-software-and-installation-guide.html"><a href="developer-software-and-installation-guide.html#precompiled"><i class="fa fa-check"></i><b>6.3.2</b> Precompiled</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="developer-software-and-installation-guide.html"><a href="developer-software-and-installation-guide.html#getting-help"><i class="fa fa-check"></i><b>6.4</b> Getting Help</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="contributor-guidelines.html"><a href="contributor-guidelines.html"><i class="fa fa-check"></i><b>7</b> Contributor Guidelines</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="contributor-guidelines.html"><a href="contributor-guidelines.html#code"><i class="fa fa-check"></i><b>7.1</b> Code</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="contributor-guidelines.html"><a href="contributor-guidelines.html#style-guide"><i class="fa fa-check"></i><b>7.1.1</b> Style Guide</a></li>
+<li class="chapter" data-level="7.1.2" data-path="contributor-guidelines.html"><a href="contributor-guidelines.html#coding-good-practices"><i class="fa fa-check"></i><b>7.1.2</b> Coding Good Practices</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="contributor-guidelines.html"><a href="contributor-guidelines.html#github-collaborative-environment"><i class="fa fa-check"></i><b>7.2</b> GitHub Collaborative Environment</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="contributor-guidelines.html"><a href="contributor-guidelines.html#github-issues"><i class="fa fa-check"></i><b>7.2.1</b> GitHub Issues</a></li>
+<li class="chapter" data-level="7.2.2" data-path="contributor-guidelines.html"><a href="contributor-guidelines.html#github-cloning"><i class="fa fa-check"></i><b>7.2.2</b> GitHub Cloning</a></li>
+<li class="chapter" data-level="7.2.3" data-path="contributor-guidelines.html"><a href="contributor-guidelines.html#github-branching"><i class="fa fa-check"></i><b>7.2.3</b> GitHub Branching</a></li>
+<li class="chapter" data-level="7.2.4" data-path="contributor-guidelines.html"><a href="contributor-guidelines.html#github-pull-requests"><i class="fa fa-check"></i><b>7.2.4</b> GitHub Pull Requests</a></li>
+<li class="chapter" data-level="7.2.5" data-path="contributor-guidelines.html"><a href="contributor-guidelines.html#github-actions"><i class="fa fa-check"></i><b>7.2.5</b> GitHub Actions</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="contributor-guidelines.html"><a href="contributor-guidelines.html#git-1"><i class="fa fa-check"></i><b>7.3</b> git</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="contributor-guidelines.html"><a href="contributor-guidelines.html#git-example"><i class="fa fa-check"></i><b>7.3.1</b> git Example</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="hpp-template-for-c-modules.html"><a href="hpp-template-for-c-modules.html"><i class="fa fa-check"></i><b>8</b> .hpp template for C++ modules</a></li>
+<li class="chapter" data-level="9" data-path="documentation-template.html"><a href="documentation-template.html"><i class="fa fa-check"></i><b>9</b> Documentation Template</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="documentation-template.html"><a href="documentation-template.html#writing-function-reference"><i class="fa fa-check"></i><b>9.1</b> Writing function reference</a></li>
+<li class="chapter" data-level="9.2" data-path="documentation-template.html"><a href="documentation-template.html#writing-a-vignette"><i class="fa fa-check"></i><b>9.2</b> Writing a vignette</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="testing.html"><a href="testing.html"><i class="fa fa-check"></i><b>10</b> Testing</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="testing.html"><a href="testing.html#introduction"><i class="fa fa-check"></i><b>10.1</b> Introduction</a></li>
+<li class="chapter" data-level="10.2" data-path="testing.html"><a href="testing.html#c-unit-testing-and-benchmarking"><i class="fa fa-check"></i><b>10.2</b> C++ unit testing and benchmarking</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="testing.html"><a href="testing.html#build-and-run-the-tests"><i class="fa fa-check"></i><b>10.2.1</b> Build and run the tests</a></li>
+<li class="chapter" data-level="10.2.2" data-path="testing.html"><a href="testing.html#adding-a-c-test"><i class="fa fa-check"></i><b>10.2.2</b> Adding a C++ test</a></li>
+<li class="chapter" data-level="10.2.3" data-path="testing.html"><a href="testing.html#debugging-a-c-test"><i class="fa fa-check"></i><b>10.2.3</b> Debugging a C++ test</a></li>
+<li class="chapter" data-level="10.2.4" data-path="testing.html"><a href="testing.html#benchmark-example"><i class="fa fa-check"></i><b>10.2.4</b> Benchmark example</a></li>
+<li class="chapter" data-level="10.2.5" data-path="testing.html"><a href="testing.html#clean-up-after-running-c-tests"><i class="fa fa-check"></i><b>10.2.5</b> Clean up after running C++ tests</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="testing.html"><a href="testing.html#templates-for-googletest-testing"><i class="fa fa-check"></i><b>10.3</b> Templates for GoogleTest testing</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="testing.html"><a href="testing.html#c-test-templates"><i class="fa fa-check"></i><b>10.3.1</b> C++ test templates</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="testing.html"><a href="testing.html#r-testing"><i class="fa fa-check"></i><b>10.4</b> R testing</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="testing.html"><a href="testing.html#testing-fims-locally"><i class="fa fa-check"></i><b>10.4.1</b> Testing FIMS locally</a></li>
+<li class="chapter" data-level="10.4.2" data-path="testing.html"><a href="testing.html#testing-using-gdbsource"><i class="fa fa-check"></i><b>10.4.2</b> Testing using <code>gdbsource</code></a></li>
+<li class="chapter" data-level="10.4.3" data-path="testing.html"><a href="testing.html#and-file-organization"><i class="fa fa-check"></i><b>10.4.3</b> and file organization</a></li>
+<li class="chapter" data-level="10.4.4" data-path="testing.html"><a href="testing.html#r-template"><i class="fa fa-check"></i><b>10.4.4</b> R template</a></li>
+<li class="chapter" data-level="10.4.5" data-path="testing.html"><a href="testing.html#random-numbers"><i class="fa fa-check"></i><b>10.4.5</b> Random numbers</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://noaa-fims.github.io/collaborative_workflow" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">FIMS Developer Handbook</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="contributor-guidelines" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Chapter 7</span> Contributor Guidelines<a href="contributor-guidelines.html#contributor-guidelines" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>External contributions and feedback are important to the development and future maintenance of FIMS and are welcome. This section provides contributing guidelines and workflows for developers of FIMS and the ecosystem surrounding FIMS. All contributors, both internal and external, are required to abide by the <a href="code-of-conduct.html#code-of-conduct">Code of Conduct</a>.</p>
+<div id="code" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Code<a href="contributor-guidelines.html#code" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="style-guide" class="section level3 hasAnchor" number="7.1.1">
+<h3><span class="header-section-number">7.1.1</span> Style Guide<a href="contributor-guidelines.html#style-guide" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Style guides are used to ensure the code is consistent, easy to use (e.g., read, share, and verify) and ultimately easier to write.</p>
+<div id="c" class="section level4 hasAnchor" number="7.1.1.1">
+<h4><span class="header-section-number">7.1.1.1</span> C++<a href="contributor-guidelines.html#c" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>We use the <a href="https://google.github.io/styleguide/cppguide.html">Google C++ Style Guide</a> for C++ code.</p>
+</div>
+<div id="r-1" class="section level4 hasAnchor" number="7.1.1.2">
+<h4><span class="header-section-number">7.1.1.2</span> R<a href="contributor-guidelines.html#r-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>We use the <a href="https://style.tidyverse.org/">tidyverse style guide</a> for R code.</p>
+</div>
+<div id="naming-conventions" class="section level4 hasAnchor" number="7.1.1.3">
+<h4><span class="header-section-number">7.1.1.3</span> Naming Conventions<a href="contributor-guidelines.html#naming-conventions" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>We use <code>typename</code> instead of <code>class</code> when defining templates for consistency with the <code>TMB</code> package. While types may be defined in many ways, we use <code>Type</code> instead of <code>T</code> to define Types within FIMS.</p>
+</div>
+<div id="commit-messages" class="section level4 hasAnchor" number="7.1.1.4">
+<h4><span class="header-section-number">7.1.1.4</span> Commit Messages<a href="contributor-guidelines.html#commit-messages" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Commit messages communicate details about changes that have occurred to collaborators and improve team efficiency. The best guidance for how to create an excellent commit message can be found on <a href="https://www.conventionalcommits.org">Conventional Commits</a>, which is our style guide for commit messages.</p>
+</div>
+</div>
+<div id="coding-good-practices" class="section level3 hasAnchor" number="7.1.2">
+<h3><span class="header-section-number">7.1.2</span> Coding Good Practices<a href="contributor-guidelines.html#coding-good-practices" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Following good software development and coding practices simplifies collaboration, improves readability, and streamlines testing and review. The following are industry-accepted standards:</p>
+<ul>
+<li>Adhere to the adopted <a href="contributor-guidelines.html#style-guide">Style Guides</a></li>
+<li>Avoid rework - take the time to check for existing options (e.g., in-house, open source, etc.) before writing code</li>
+<li>Keep code as simple as possible</li>
+<li>Use meaningful variable names that are easy to understand and clearly represent the data they store</li>
+<li>Use descriptive titles and consistent conventions for class and function names</li>
+<li>Use consistent names for temporary variables that have the same kind of role</li>
+<li>Add clear and concise coding comments</li>
+<li>Use consistent formatting and indentation to improve readability and organization</li>
+<li>Group code into separate blocks for individual tasks</li>
+<li>Avoid hard-coded values to ensure portability of code</li>
+<li>Follow the “Don’t Repeat Yourself” (DRY) principle for coding</li>
+<li>Avoid deep nesting</li>
+<li>Limit line length (wrap ~72 characters) of code but use a single line per paragraph in this markdown document</li>
+<li>Capitalize SQL queries so they are readily distinguishable from table/column names</li>
+</ul>
+</div>
+</div>
+<div id="github-collaborative-environment" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> GitHub Collaborative Environment<a href="contributor-guidelines.html#github-collaborative-environment" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Communication is managed via the <a href="https://github.com/NOAA-FIMS">NOAA-FIMS</a> GitHub organization.</p>
+<div id="github-issues" class="section level3 hasAnchor" number="7.2.1">
+<h3><span class="header-section-number">7.2.1</span> GitHub Issues<a href="contributor-guidelines.html#github-issues" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><a href="https://guides.github.com/features/issues/">GitHub Issues</a> are key to keeping everyone informed and prioritizing tasks. All bugs, future projects, ideas, concerns, developments, etc. must be documented using an issue the appropriate repository’s Issue Tracker within the NOAA-FIMS organization, e.g., <a href="https://github.com/NOAA-FIMS/FIMS/issues">Issue Tracker for NOAA-FIMS/FIMS</a>, before the code is altered. Issues are automatically tagged with the <code>status: triage_needed</code> tag and placed on the <a href="https://github.com/orgs/NOAA-FIMS/projects/21">Issue Triage Board</a> where they will be labeled, given an assignee, and given a milestone by those in charge of the triage process.</p>
+<p>There are different types of issues, e.g., bug, enhancement, etc., that might be applicable to your situation. Please read the descriptions for each issue type available and use the form that best suits your situation. The available types are the same or similar on each GitHub Issue page within the NOAA-FIMS organization. Navigate to the <a href="https://github.com/NOAA-FIMS/FIMS/issues/new/choose">GitHub Issue page for NOAA-FIMS/FIMS</a> to see the available types.</p>
+<div id="github-issue-labels" class="section level4 hasAnchor" number="7.2.1.1">
+<h4><span class="header-section-number">7.2.1.1</span> GitHub Issue Labels<a href="contributor-guidelines.html#github-issue-labels" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><a href="https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/managing-labels">Labels</a> help categorize and manage the work ahead of us. Members of the NOAA-FIMS organization can add labels to their issues upon submission of the issue. Additional labels will be applied during the triage process if needed.</p>
+<p>Labels within NOAA-FIMS are categorized, e.g., <code>status: triage_needed</code> is a status label. Typically, every issue should have one label per category.</p>
+</div>
+<div id="github-issue-templates" class="section level4 hasAnchor" number="7.2.1.2">
+<h4><span class="header-section-number">7.2.1.2</span> GitHub Issue Templates<a href="contributor-guidelines.html#github-issue-templates" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The templates for issue types are maintained in the <a href="https://www.github.com/NOAA-FIMS/.github/tree/main/.github/ISSUE_TEMPLATE">.github/ISSUE_TEMPLATE folder within the NOAA-FIMS/.github repository</a>, which allows the same forms to be available in each repository without copying and pasting the code to each repositories .github/ISSUE_TEMPLATE folder. Additional examples of Example templates for issues and pull requests can be found on <a href="http://www.docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests">GitHub Docs</a>.</p>
+</div>
+<div id="github-projects" class="section level4 hasAnchor" number="7.2.1.3">
+<h4><span class="header-section-number">7.2.1.3</span> GitHub Projects<a href="contributor-guidelines.html#github-projects" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><a href="https://docs/github.com/en/issues/planning-and-tracking-with-projects">GitHub Projects</a> are used to keep track and prioritize issues. There are several <a href="https://github.com/orgs/NOAA-FIMS/projects">GitHub Projects for NOAA-FIMS</a> such as the <a href="https://github.com/orgs/NOAA-FIMS/projects/21">Issue Triage Board</a>.</p>
+</div>
+</div>
+<div id="github-cloning" class="section level3 hasAnchor" number="7.2.2">
+<h3><span class="header-section-number">7.2.2</span> GitHub Cloning<a href="contributor-guidelines.html#github-cloning" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Any repository within NOAA-FIMS can be <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository#cloning-a-repository">cloned</a> to a personal or virtual machine. But, contributors without write access will need to <a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository">fork</a> the repository and then clone their fork.</p>
+</div>
+<div id="github-branching" class="section level3 hasAnchor" number="7.2.3">
+<h3><span class="header-section-number">7.2.3</span> GitHub Branching<a href="contributor-guidelines.html#github-branching" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>After cloning and before any work is done, ideas for potential changes to the code should be proposed in a <a href="contributor-guidelines.html#github-issues">GitHub Issue</a>. Next, after the issue is filed and before any work is done, a feature branch should be created where the work will be done.</p>
+<div id="branch-naming-conventions" class="section level4 hasAnchor" number="7.2.3.1">
+<h4><span class="header-section-number">7.2.3.1</span> Branch Naming Conventions<a href="contributor-guidelines.html#branch-naming-conventions" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol style="list-style-type: decimal">
+<li>Keep it brief</li>
+<li>Use a hyphen as separators</li>
+</ol>
+<p>Example: <strong>R-pkg-skeleton</strong></p>
+</div>
+<div id="branching-strategy" class="section level4 hasAnchor" number="7.2.3.2">
+<h4><span class="header-section-number">7.2.3.2</span> Branching Strategy<a href="contributor-guidelines.html#branching-strategy" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>FIMS uses a <a href="https://trunkbaseddevelopment.com/">Scaled Trunk-Based Development</a> branching strategy to streamline the integration of new code into the trunk. This strategy was mainly chosen for the following two reasons:</p>
+<ul>
+<li>Encourage small, frequent changes.</li>
+<li>Enable the release of bug fixes without new features.</li>
+</ul>
+<p>Some branches within NOAA-FIMS repositories have <a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule">branch protection rules</a>. For example, the branch protection rules for the main branch of NOAA-FIMS/FIMS are described on <a href="https://github.com/NOAA-FIMS/FIMS/settings/branches">GitHub in the branch settings</a>.</p>
+</div>
+</div>
+<div id="github-pull-requests" class="section level3 hasAnchor" number="7.2.4">
+<h3><span class="header-section-number">7.2.4</span> GitHub Pull Requests<a href="contributor-guidelines.html#github-pull-requests" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Once development within a feature branch is complete, a <a href="https://docs.github.com/en/pull-requests">Pull Request (PR)</a> should be initiated. PRs can be initiated with a draft status or marked as ready for review. The former will allow the code to be tested using tests available in GitHub actions without initiating a formal review. The latter will initiate the <a href="contributor-guidelines.html#pull-request-review">code review</a> process. For repositories/branches with branch protection rules, the PR must be formally reviewed, approved, and pass all tests (see the section on <a href="contributor-guidelines.html#github-actions">GitHub Actions</a>) before the branch can be merged into the chosen branch.</p>
+<p>Instructions for submitting your PR are available on the PR form on GitHub. PRs from forks are treated the same as PRs from within the repository, see the <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork">GitHub documentation on creating a PR from a fork</a> for more information.</p>
+<div id="pull-request-templates" class="section level4 hasAnchor" number="7.2.4.1">
+<h4><span class="header-section-number">7.2.4.1</span> Pull Request Templates<a href="contributor-guidelines.html#pull-request-templates" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The templates for PRs are maintained in the <a href="https://www.github.com/NOAA-FIMS/.github/tree/main/.github">.github/folder within the NOAA-FIMS/.github repository</a>, same as <a href="contributor-guidelines.html#github-issue-templates">NOAA-FIMS Issue templates</a>.</p>
+<p>See the <a href="https://github.com/NOAA-FIMS/FIMS/blob/main/.github/PULL_REQUEST_TEMPLATE/pull_request_template.md">NOAA-FIMS/FIMS PR template here</a>.</p>
+</div>
+<div id="pull-request-review" class="section level4 hasAnchor" number="7.2.4.2">
+<h4><span class="header-section-number">7.2.4.2</span> Pull Request Review<a href="contributor-guidelines.html#pull-request-review" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><a href="https://github.com/features/code-review">Code review</a> ensures health and continuous improvement of the FIMS codebase, while simultaneously helping FIMS developers become familiar with the codebase. Tools within GitHub allow for reviewers to analyze code changes, provide inline comments, and view change histories with ease.</p>
+<p><a href="https://google.github.io/eng-practices/review/">Google’s code review guide</a> provides a useful set of guidelines for both reviewers and code authors.</p>
+<p>Below is a flowchart for the FIMS code review process. The author starts by submitting a PR, ensuring documentation, tests, and continuous integration checks are complete. The initiator of the PR must propose a reviewer (see <a href="contributor-guidelines.html#assigning-reviewers">Assigning Reviewers</a>). The reviewer receives the review request and either executes the review independently or pairs with another team representative if assistance is needed. Based on the review, changes may be requested, which the author must address before approval. Once the PR is approved, the author must rebase and merge it into the desired branch.</p>
+<div id="htmlwidget-3aafff9b23ebe4d035b3" style="width:672px;height:1000px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3aafff9b23ebe4d035b3">{"x":{"diagram":"\n        graph TB\n        A[Author: Submit a pull request PR<br/><br/>- Documentation included<br/>- Tests implemented<br/>- CI checks passed]\n        B[Author: Propose a reviewer<br/><br/>- Default assignee: an OST rep for a quick review]\n        \n        A-->B\n        B-->C[Reviewer: Receive code review request]\n        C --> |No assistance needed| E[Reviewer: Execute code review]\n        C --> |Help wanted| D[Reviewer: Add an additional reviewer to the PR] \n        D --> E\n        E --> |Changes needed| F[Reviewer: Request changes] \n        F --> G[Author: Make changes]\n        G --> H[Reviewer: Approve PR]\n        E --> |No changes needed| H\n        H --> I[Author: Rebase and merge PR]\n \n        style A text-align:left, fill:#FFF\n        style B fill:#FFF\n        style G fill:#FFF\n        style I fill:#FFF\n"},"evals":[],"jsHooks":[]}</script>
+<div id="assigning-reviewers" class="section level5 hasAnchor" number="7.2.4.2.1">
+<h5><span class="header-section-number">7.2.4.2.1</span> Assigning Reviewers<a href="contributor-guidelines.html#assigning-reviewers" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Reviewers of PRs for changes to the codebase in FIMS should be suggested by the author of the PR. For those FIMS Implementation Team Members that keep their status in GitHub current (see <a href="https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/personalizing-your-profile#setting-a-status">“Setting a status”</a> for more information), authors of PRs can use the status information to prevent assigning a reviewer who is known to be “Busy”.</p>
+<p>If a review has been assigned to you and you don’t feel like you have the expertise to address it properly, please respond directly to the PR so a different reviewer can be found promptly or suggest someone to help you with the review.</p>
+</div>
+<div id="review-checklist" class="section level5 hasAnchor" number="7.2.4.2.2">
+<h5><span class="header-section-number">7.2.4.2.2</span> Review Checklist<a href="contributor-guidelines.html#review-checklist" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>While automated testing can assure the code structure and logic pass quality checks, human reviewers are required to evaluate things like functionality, readability, etc. Every PR is accompanied by an automatically generated <a href="https://github.com/NOAA-FIMS/FIMS/blob/main/.github/workflows/pr-checklist.yml">checklist of major considerations for code reviews</a>.</p>
+</div>
+<div id="reviewer-good-practices" class="section level5 hasAnchor" number="7.2.4.2.3">
+<h5><span class="header-section-number">7.2.4.2.3</span> Reviewer Good Practices<a href="contributor-guidelines.html#reviewer-good-practices" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Good reviews require good review habits. Please use the guidance found at <a href="https://conventionalcomments.org/">Conventional Comments</a> for formatting/structuring your reviewer comments. Navigate to the <a href="https://www.perforce.com/blog/qac/9-best-practices-for-code-review">Perforce Blog</a> for nine best practices for code review and use the <a href="contributor-guidelines.html#style-guide">FIMS Style Guide</a> to settle any style arguments.</p>
+</div>
+</div>
+</div>
+<div id="github-actions" class="section level3 hasAnchor" number="7.2.5">
+<h3><span class="header-section-number">7.2.5</span> GitHub Actions<a href="contributor-guidelines.html#github-actions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>FIMS uses <a href="https://docs.GitHub.com/en/actions">GitHub Actions</a> to automate routine tasks such as testing, building and deploying websites, and notifying individuals. Some of the actions are built on <a href="https://docs.GitHub.com/en/actions/using-workflows/reusing-workflows">reusable workflows</a> available in <a href="https://nmfs-fish-tools.github.io/ghactions4r/">{ghactions4r}</a>, where reusable workflows allow for sharing of code.</p>
+<p>For the repositories in NOAA-FIMS that use GitHub actions, the actions can be found in .yml files that are stored in the .github/workflows directory. For example YAML files in <a href="https://github.com/NOAA-FIMS/FIMS/tree/main/.github/workflows">.github/workflows of the NOAA-FIMS/FIMS repository</a> specify the setup for the GitHub Actions for the source code of FIMS.</p>
+<div id="example-actions" class="section level4 hasAnchor" number="7.2.5.1">
+<h4><span class="header-section-number">7.2.5.1</span> Example Actions<a href="contributor-guidelines.html#example-actions" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li><strong>call-r-cmd-check</strong> runs R CMD Check on the FIMS R package using the current version of R across three operating systems, Windows, Linux (Ubuntu), and OSX. R CMD Check ensures that the FIMS package can be downloaded without error. To replicate the GitHub Actions workflow locally, use <code>devtools::check()</code>.</li>
+<li><strong>run-clang-tidy</strong> runs checks while compiling the C++ code. If this run fails, fixes need to be made to the C++ code to address the issue identified.</li>
+<li><strong>run-googletest</strong> runs the GoogleTest C++ unit tests and benchmarking. If this run fails, then fixes need to be made to the C++ code and/or the GoogleTest C++ unit tests. To replicate this GitHub Actions workflow locally, follow instructions in the <a href="testing.html#testing">testing section</a>.</li>
+</ul>
+</div>
+<div id="debugging-broken-github-actions" class="section level4 hasAnchor" number="7.2.5.2">
+<h4><span class="header-section-number">7.2.5.2</span> Debugging Broken GitHub Actions<a href="contributor-guidelines.html#debugging-broken-github-actions" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>GitHub Actions can fail for many reasons, so debugging is necessary to find the
+cause of the failing run. The tips found below can be helpful for determining why the action failed.</p>
+<ul>
+<li>Ask for help as needed! Some members of the FIMS team who have experience debugging GitHub Actions are Bai, Kathryn, and Ian.</li>
+<li>Investigate why the run failed by looking at the log file. GitHub provides some guidance on what is contained in the <a href="https://docs.GitHub.com/en/actions/quickstart#viewing-your-workflow-results">log file</a>.</li>
+<li>Try to replicate the problem locally. For example, if the call-r-cmd-check run fails during the testthat tests, try running the testthat tests locally (e.g., using <code>devtools::test()</code> in an R session).</li>
+<li>If the problem can be replicated, try to fix locally by fixing one test or issue at a time. Then push the changes up to GitHub and monitor the new GitHub Action run.</li>
+<li>Check if the problem is present across all investigated operating systems because it might be operating system specific and not reproducible on your machine. For example, if using Windows locally, it may be an issue specific to Mac or Linux.</li>
+<li>Sometimes, runs may fail because a particular dependency was not available at the exact point in time need for the run (e.g., maybe R did not install because the R executable could not be downloaded); if that is the case, wait a few hours to a day and try to rerun. If it continues to fail for more than a day, a change in the GitHub Action .yml file may be needed.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="git-1" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> git<a href="contributor-guidelines.html#git-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><a href="https://git-scm.com">git</a> is a distributed version control system that tracks files. All files within NOAA-FIMS are tracked using git and GitHub (see the section on <a href="contributor-guidelines.html#github-collaborative-environment">GitHub</a>) is used as a central server. The use of git stops the need for saving files with file_1.txt and file_2.txt.</p>
+<div id="git-example" class="section level3 hasAnchor" number="7.3.1">
+<h3><span class="header-section-number">7.3.1</span> git Example<a href="contributor-guidelines.html#git-example" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>Use the following commands to (a) move to the local branch that you want your feature branch to be based off of, e.g., main in the example below; and (b) create a new branch, where you will replace <branch-name> with the name of your feature branch (see <a href="contributor-guidelines.html#branch-naming-conventions">Branch Naming Conventions</a>) and check it out.</li>
+</ol>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="contributor-guidelines.html#cb6-1" tabindex="-1"></a><span class="sc">$</span> git checkout main</span>
+<span id="cb6-2"><a href="contributor-guidelines.html#cb6-2" tabindex="-1"></a><span class="sc">$</span> git checkout <span class="sc">-</span>b <span class="sc">&lt;</span>branch<span class="sc">-</span>name<span class="sc">&gt;</span></span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>Periodically rebase your feature branch with the branch you plan on merging into in the future by (a) fetching all the changes stored in GitHub for the branches in your clone and (b) rebasing your feature branch, e.g., here we rebase to origin/main because we eventually want to merge into main. We can rebase to any remote or local branch though. Be careful when rebasing if you have already pushed your feature branch to GitHub because rebasing will rewrite your commit hashes in your feature branch.</li>
+</ol>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="contributor-guidelines.html#cb7-1" tabindex="-1"></a><span class="sc">$</span> git fetch <span class="sc">-</span>a</span>
+<span id="cb7-2"><a href="contributor-guidelines.html#cb7-2" tabindex="-1"></a><span class="sc">$</span> git rebase origin<span class="sc">/</span>main</span></code></pre></div>
+<ol start="3" style="list-style-type: decimal">
+<li>While editing code, commit regularly following <a href="contributor-guidelines.html#commit-messages">commit messages</a> guidelines by (a) adding the changed files to the que and (2) committing them to the feature branch with a thoughtful commit message. If you configure your editor for git you can remove the <code>-m</code> argument and use a text file to make a more meaningful commit message with multiple lines.</li>
+</ol>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="contributor-guidelines.html#cb8-1" tabindex="-1"></a><span class="sc">$</span> git add <span class="sc">&lt;</span>filename<span class="sc">&gt;</span></span>
+<span id="cb8-2"><a href="contributor-guidelines.html#cb8-2" tabindex="-1"></a><span class="er">$</span> git commit <span class="sc">-</span>m <span class="st">&quot;feat: 50 character description&quot;</span> <span class="st">&quot;Longer description&quot;</span></span></code></pre></div>
+<ol start="4" style="list-style-type: decimal">
+<li>Consider interactively rebasing your commits to squash similar commits into a single commit or rearrange the order of your commits. The following example is for the situation where you want to look at the last ten commits.</li>
+</ol>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="contributor-guidelines.html#cb9-1" tabindex="-1"></a><span class="sc">$</span> git rebase <span class="sc">-</span>i head<span class="sc">~</span><span class="dv">10</span></span></code></pre></div>
+<ol start="5" style="list-style-type: decimal">
+<li>Push your committed changes to GitHub.</li>
+</ol>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="contributor-guidelines.html#cb10-1" tabindex="-1"></a><span class="sc">$</span> git push origin <span class="sc">&lt;</span>branch<span class="sc">-</span>name<span class="sc">&gt;</span></span></code></pre></div>
+<ol style="list-style-type: decimal">
+<li><p>When you are finished making changes to your feature branch, navigate to GitHub and open a <a href="#github-pull-request">pull request</a> to the desired branch, e.g., main in this example.</p></li>
+<li><p>Once the PR is approved and merged into the desired branch you (a) switch to a different branch and (b) delete the local version of your feature branch. Note that you might have to use <code>-D</code> instead of the lower-case version if you want to force the removal of the branch given that we use a rebase strategy and the commit hashes might have changed, thus git to think that the feature branch has not been merged into main because your local version of the feature branch might have different hashes than the remote version.</p></li>
+</ol>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="contributor-guidelines.html#cb11-1" tabindex="-1"></a><span class="sc">$</span> git checkout main</span>
+<span id="cb11-2"><a href="contributor-guidelines.html#cb11-2" tabindex="-1"></a><span class="sc">$</span> git branch <span class="sc">-</span>d <span class="sc">&lt;</span>branch<span class="sc">-</span>name<span class="sc">&gt;</span></span></code></pre></div>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="developer-software-and-installation-guide.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="hpp-template-for-c-modules.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": null,
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/noaa-fims/collaborative_workflow/edit/main/07-contributor-guide.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": "https://github.com/noaa-fims/collaborative_workflow/blob/main/07-contributor-guide.Rmd",
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
